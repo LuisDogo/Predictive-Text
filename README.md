@@ -1,3 +1,4 @@
+![](https://github.com/LuisDogo/Predictive-Text/blob/main/canelita_vibin.gif)
 # Predictive-Text
 
 with n-gram model across different message sources
