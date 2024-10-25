@@ -19,7 +19,7 @@ def main():
     ldms = pd.read_csv("corpora/LDMS.csv")
     rrm = pd.read_csv("corpora/RubenChatsJoined.csv").dropna(subset=["content"])
     # eyag = pd.read_csv()
-    # dahb = pd.read_csv()
+    # dahb jj = pd.read_csv("corpora/")
     corpora = {
         "Moreno_Santamaria_Luis_Daniel" : ldms["content"],
         "Ruben_Rodriguez_Mendez" : rrm["content"],
