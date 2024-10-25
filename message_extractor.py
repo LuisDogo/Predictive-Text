@@ -5,11 +5,9 @@ import regex as re
 
 def main():
     txts = [ # (chat.txt, nombre_persona_chat)
-        ("chats/WhatsApp Chat with ✨ マン　カリーン　チンゲ.txt", "Pedro"),
-        ("chats/WhatsApp Chat with Fellow King Dio Brando.txt", "Brandon"),
-        ("chats/WhatsApp Chat with バラリア.txt", "Valeria")
+        ("chats/Chat de WhatsApp con paco El Coach.txt", "Paco"),
         ]
-    my_message = "Luis ドゴ: " # su nombre en el chat
+    my_message = "Edwin: " # su nombre en el chat
     messages = []
     days = []
     people = []
@@ -31,7 +29,7 @@ def main():
         }
     )
     df = df[df["content"] != "<Media omitted>"] # borrar media xd
-    df.to_csv('LDMS.csv', index=False)
+    df.to_csv('EYAG.csv', index=False)
 
 if __name__ == "__main__":
     main()

@@ -18,12 +18,12 @@ def main():
     # corpora creation
     ldms = pd.read_csv("corpora/LDMS.csv")
     rrm = pd.read_csv("corpora/RubenChatsJoined.csv").dropna(subset=["content"])
-    # eyag = pd.read_csv()
+    eyag = pd.read_csv("corpora/EYAG.csv").dropna(subset=["content"])
     # dahb = pd.read_csv()
     corpora = {
         "Moreno_Santamaria_Luis_Daniel" : ldms["content"],
         "Ruben_Rodriguez_Mendez" : rrm["content"],
-        "Edwin_Yahir_Arteaga_Gonzalez" : 0,
+        "Edwin_Yahir_Arteaga_Gonzalez" : eyag["content"],
         "Diego_Alberto_Hernandez_Barrera" : 0
     }
     for alumno in corpora:
