@@ -13,7 +13,7 @@ def main():
     # hyperparameters
 
     nlp = spacy.load("es_core_news_sm")
-    n = 4
+    n = 3
 
     # corpora creation
 
@@ -23,13 +23,13 @@ def main():
     }
 
     for alumno in corpora:
-        ngrams_file_name = f'ngrams/ngrams_{alumno}'
         # .csv creation
         for ngram in range(2,n):
+            ngrams_file_name = f'ngrams/ngrams_{ngram}_{alumno}'
             vectorizer = CountVectorizer(ngram_range = (ngram, ngram))
             ft_matrix = vectorizer.fit_transform(corpora[alumno])
-            print(ft_matrix)
-            print("==" * 50)
+            df_ngram = pd.DataFrame(ft_matrix) 
+            df_ngram.to_csv(ngrams_file_name, sep = "\t")
 
     return 0
 
