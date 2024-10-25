@@ -1,14 +1,15 @@
+# solo funciona con chats de whatsapp, creen su propia carpeta de chats
 import numpy as np
 import pandas as pd
 import regex as re
 
 def main():
-    txts = [ 
+    txts = [ # (chat.txt, nombre_persona_chat)
         ("chats/WhatsApp Chat with ✨ マン　カリーン　チンゲ.txt", "Pedro"),
         ("chats/WhatsApp Chat with Fellow King Dio Brando.txt", "Brandon"),
         ("chats/WhatsApp Chat with バラリア.txt", "Valeria")
         ]
-    my_message = "Luis ドゴ: "
+    my_message = "Luis ドゴ: " # su nombre en el chat
     messages = []
     days = []
     people = []
@@ -29,7 +30,7 @@ def main():
         "person" : people,
         }
     )
-    df = df[df["content"] != "<Media omitted>"]
+    df = df[df["content"] != "<Media omitted>"] # borrar media xd
     df.to_csv('LDMS.csv', index=False)
 
 if __name__ == "__main__":
