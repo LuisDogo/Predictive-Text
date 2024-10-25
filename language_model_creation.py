@@ -13,6 +13,7 @@ def main():
     # hyperparameters
 
     nlp = spacy.load("es_core_news_sm")
+    n = 4
 
     # corpora creation
 
@@ -20,18 +21,15 @@ def main():
     corpora = {
         "Moreno_Santamaria_Luis_Daniel" : df["content"]
     }
-    # aftermath
 
-    corpora_tokens = []
     for alumno in corpora:
-        corpus_alumno = corpora[alumno].apply(nlp)
-        tokens_file_name = f'tokens/tokens_{alumno}'
-        if(os.path.exists(tokens_file_name)):
-            return 0
-        else:
-            tokens_file = open(tokens_file_name, "wb")
-            pickle.dump(corpus_alumno, tokens_file)
-            tokens_file.close()
+        ngrams_file_name = f'ngrams/ngrams_{alumno}'
+        # .csv creation
+        for ngram in range(2,n):
+            vectorizer = CountVectorizer(ngram_range = (ngram, ngram))
+            ft_matrix = vectorizer.fit_transform(corpora[alumno])
+            print(ft_matrix)
+            print("==" * 50)
 
     return 0
 
