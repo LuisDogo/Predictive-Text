@@ -13,7 +13,7 @@ def main():
     # hyperparameters
 
     nlp = spacy.load("es_core_news_sm")
-    n = 3
+    n = 4
 
     # corpora creation
 
